@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Albanian Songs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Press the Button for 10 Random Albanian Songs!</h1>
+    <button onclick="generateSongs()">Get Random Songs</button>
+    <ul id="songList"></ul>
+
+    <script>
+        const songs = [
+            "Tingulli 3nt - Ça bone",
+            "Elvana Gjata - Ku Vajti",
+            "Noizy - Nuk je vetëm",
+            "Flori Mumajesi - Me fjalë të vogla",
+            "Ledri Vula - 100 Probleme",
+            "Dafina Zeqiri - Mos shko",
+            "Capital T - Pse po ma lun lojën",
+            "Era Istrefi - Bonbon",
+            "Kida - Mke rrejt",
+            "Butrint Imeri - Xhanem",
+            "Mozzik - Zemra Ime",
+            "Luar - Vetëm një natë",
+            "Gjiko - I Kom",
+            "Arilena Ara - Nëntori",
+            "Rina Balaj - Ski me ik",
+            "Yll Limani - Harrom",
+            "Fifi - Marova",
+            "Alban Skënderaj - Refuzoj",
+            "Adrian Gaxha - Kjo zemër",
+            "Dhurata Dora - Zemer"
+        ];
+
+        function generateSongs() {
+            const songList = document.getElementById('songList');
+            songList.innerHTML = ''; // Clear the list
+            let shuffledSongs = songs.sort(() => 0.5 - Math.random()).slice(0, 10); // Get 10 random songs
+            shuffledSongs.forEach(song => {
+                let li = document.createElement('li');
+                li.textContent = song;
+                songList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
